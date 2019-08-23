@@ -1,0 +1,7 @@
+## get the java.util.UUID Class
+#set($uuidCls=$action.class.forName('java.util.UUID'))
+## get the method UUID.randomUUID
+#set($randomUUIDMethod=$uuidCls.getDeclaredMethod('randomUUID',null))
+## generate UUID string
+uuid1: $randomUUIDMethod.invoke(null,null).toString()<br>
+uuid2: $randomUUIDMethod.invoke(null,null).toString()<br>
